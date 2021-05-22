@@ -180,17 +180,23 @@ if(boy.isTouching(vaccineGroup)){
   if(timer < 1){
     shield.remove()
     InvPro.x = 3000
-    timer = 10
+    timer = 20
   }
 
   if(InvPro.x === 402){
     timer -= 0.03
     textSize(30)
-    fill(54,46,65)
-    text("This Shield will protect you only for 10 second",250,150)
+    fill("#ff35dc")
+    text("This Shield will protect you only for 20 second",250,150)
   timerText -= 0.05
   }
   
+
+    
+  if(timerText > 0){
+    fill(random(0,255),random(50,255),random(100,255))
+    text("Wow!! You just caught the vaccine",250,height/2)
+    }
    
 
 if(boy.isTouching(protienGroup)){
@@ -206,7 +212,12 @@ if(boy.isTouching(sanitizerGroup)){
 
 
 
-if(keyDown("space") || touches.length && boy.y >= 550){
+if(keyDown("space") && boy.y >= 550){
+  boy.velocityY = -72
+  
+}
+
+if(touches.length && boy.y >= 550){
   boy.velocityY = -72
   
 }
@@ -232,7 +243,7 @@ if(gameState === con){
   bg2.velocityX = 0
   if(mousePressedOver(continueB)){
     gameState = Play
-    boy.x = 200
+   // boy.x = 200
   }
 }
 
@@ -378,6 +389,7 @@ if(frameCount % 555 === 0){
 
 function Reset(){
   gameState = Play
+  reset.visible = false
   coronaGroup.destroyEach();
   maskGroup.destroyEach()
   sanitizerGroup.destroyEach()
