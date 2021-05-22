@@ -112,6 +112,9 @@ boy.collide(invisibleGround);
   if(gameState === serve){
     infected.visible = false
     continueB.visible = false
+    textSize(22)
+    fill("yellow")
+    text("I you play this game for 2-3 min then you will get some mask, sanitizer, vaccine, som protien food etc",10,height/1.5)
   //start.onMousePressed =function(){ start.visible= false; bgScreen2.velocityX = -6}
   if(mousePressedOver(start) || touches.length){
     start.remove()
