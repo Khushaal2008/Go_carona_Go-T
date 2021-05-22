@@ -244,7 +244,7 @@ if(boy.x < 195){
 
 if(gameState === con){
   bg2.velocityX = 0
-  if(mousePressedOver(continueB)){
+  if(mousePressedOver(continueB) || touches.length){
     gameState = Play
    // boy.x = 200
   }
@@ -311,7 +311,7 @@ vaccineGroup.setLifetimeEach(-1)
 protienGroup.setLifetimeEach(-1)
 floorGroup.setLifetimeEach(-1)
 
-if(mousePressedOver(reset)){
+if(mousePressedOver(reset)|| touches.length){
   Reset()
 }
 
